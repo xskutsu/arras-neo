@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"target": "ES2020",
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"rootDir": "./source",
+		"declaration": true,
+		"stripInternal": true,
+		"emitDeclarationOnly": true,
+		"outDir": "types",
+		"strict": true,
+		"noImplicitAny": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true
+	},
+	"include": [
+		"source"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}
