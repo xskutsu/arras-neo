@@ -1,0 +1,35 @@
+{
+	"editor.codeActionsOnSave": {
+		"source.fixAll": "always",
+		"source.organizeImports": "always"
+	},
+	"editor.detectIndentation": false,
+	"editor.formatOnPaste": true,
+	"editor.formatOnSave": true,
+	"editor.formatOnType": true,
+	"editor.insertSpaces": false,
+	"editor.renderControlCharacters": true,
+	"editor.tabSize": 4,
+	"files.eol": "\n",
+	"files.exclude": {
+		"**/.DS_Store": true,
+		"**/.git": true,
+		"**/.hg": true,
+		"**/.svn": true,
+		"**/Thumbs.db": true
+	},
+	"files.insertFinalNewline": false,
+	"files.trimFinalNewlines": true,
+	"files.trimTrailingWhitespace": true,
+	"rainbow_csv.highlight_rows": true,
+	"rainbow_csv.virtual_alignment_char": "space",
+	"rainbow_csv.virtual_alignment_mode": "always",
+	"rainbow_csv.virtual_alignment_vertical_grid": false,
+	"[csv]": {
+		"editor.inlayHints.enabled": "on",
+		"editor.occurrencesHighlight": "off"
+	},
+	"workbench.colorCustomizations": {
+		"editorInlayHint.background": "#00000000"
+	}
+}
