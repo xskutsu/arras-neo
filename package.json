@@ -2,6 +2,13 @@
 	"name": "arras-neo",
 	"version": "1.0.0",
 	"description": "Next Year's Arras.",
+	"main": "dist/arras-neo-server.cjs.js",
+	"scripts": {
+		"start": "node dist/arras-neo-server.cjs.js",
+		"clean": "rimraf dist",
+		"build": "pnpm run clean && node build.cjs",
+		"watch": "pnpm run clean && node build.cjs --watch"
+	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/xskutsu/arras-neo.git"
