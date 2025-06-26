@@ -17,7 +17,6 @@ export class Room {
 	public columns: number;
 	public rows: number;
 	private _cellMap: Map<Cell, number[]> = new Map<Cell, number[]>();
-	private _lastTickTime: number = performance.now();
 	private _cellWidth: number;
 	private _cellHeight: number;
 	constructor(width: number, height: number, layout: Cell[][]) {
@@ -61,6 +60,10 @@ export class Room {
 
 	public destroy() {
 		Room.instances.delete(this.index);
+	}
+
+	public update(): void {
+
 	}
 
 	private _makeCellMap(): void {
