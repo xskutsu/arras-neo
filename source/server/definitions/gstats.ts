@@ -20,10 +20,6 @@ export enum GStat {
 export const GStatMap: Map<string, Float16Array> = new Map<string, Float16Array>();
 
 const filePath: string = path.resolve("source/server/definitions/gstats.csv");
-if (!fs.existsSync(filePath)) {
-	throw new Error(`Failed to find gstats.csv at "${filePath}".`);
-}
-
 for (let line of fs.readFileSync(filePath, "utf-8").trim().split(/\r?\n/)) {
 	const content: string[] = line.split(",");
 	const gstat: Float16Array = new Float16Array(13);
@@ -32,8 +28,6 @@ for (let line of fs.readFileSync(filePath, "utf-8").trim().split(/\r?\n/)) {
 	}
 	GStatMap.set(content[0], gstat);
 }
-
-console.log(`${GStatMap.size} gun stats loaded.`);
 
 export function GStatMatrix(gstats: (Float16Array | [GStat, number])[]): Float16Array {
 	const gstat: Float16Array = new Float16Array(13).fill(1);

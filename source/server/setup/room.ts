@@ -1,4 +1,5 @@
 import { Vector } from "../core/vector";
+import { HashGrid } from "../physics/hashgrid";
 
 export enum Cell {
 	Normal,
@@ -8,9 +9,10 @@ export enum Cell {
 
 export class Room {
 	public static instances: Map<number, Room> = new Map<number, Room>();
-	public static index: number = 1;
+	private static _nextIndex: number = 1;
 
-	public index: number = Room.index++;
+	public index: number = Room._nextIndex++;
+	public grid: HashGrid = new HashGrid(6);
 	public width: number;
 	public height: number;
 	public layout: Cell[][];
@@ -41,7 +43,7 @@ export class Room {
 	public getRandomByType(cellType: Cell): Vector {
 		const cells: number[] | undefined = this._cellMap.get(cellType);
 		if (cells === undefined) {
-			throw new Error(`Cell type "${cellType}" is not in room "${this.index}".`);
+			return this.getRandom();
 		}
 		const index: number = Math.floor(Math.random() * cells.length / 2);
 		return {
